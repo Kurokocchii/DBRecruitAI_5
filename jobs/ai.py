@@ -5,7 +5,7 @@ import json
 
 client = None
 
-if getattr(settings, "GEMINI_API_KEY", None):
+if settings.GEMINI_API_KEY:
     client = genai.Client(api_key=settings.GEMINI_API_KEY)
 
 def extract_resume_text(pdf_path):
