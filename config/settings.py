@@ -29,6 +29,10 @@ DEBUG = os.getenv("DJANGO_DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://dbrecruitai0-production.up.railway.app/",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
