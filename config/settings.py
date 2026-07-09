@@ -27,7 +27,13 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-local-dev-only-key"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DJANGO_DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "dbrecruitai0-production.up.railway.app",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://dbrecruitai0-production.up.railway.app",
+]
 
 # Application definition
 
@@ -145,7 +151,4 @@ STATICFILES_STORAGE = (
 MEDIA_URL ="/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-
-load_dotenv()
-
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
